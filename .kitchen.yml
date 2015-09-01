@@ -1,0 +1,17 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: windows
+    transport:
+      name: winrm
+
+suites:
+  - name: default
+    run_list:
+      - recipe[firefox-custom::default]
+    attributes:
