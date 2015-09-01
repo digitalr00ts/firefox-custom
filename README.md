@@ -1,5 +1,5 @@
 # firefox-custom-cookbook
-Build Status: [![Build Status](https://secure.travis-ci.org/digitalRoots/firefox-custom.png)](http://travis-ci.org/digitalRoots/firefox-custom)
+[![Build Status](https://secure.travis-ci.org/digitalRoots/firefox-custom.png)](http://travis-ci.org/digitalRoots/firefox-custom)
 
 Chef cookbook to enabled customization of Firefox installation.
 
