@@ -37,4 +37,4 @@ matrix:
     - env: CHEF_VERSION=master
 
 script:
-  - bundle exec foodcritic -f any
+  - bundle exec foodcritic -f any .
