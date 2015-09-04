@@ -17,7 +17,14 @@ if platform_family?('windows')
     action :create
   end
 elsif platform_family?('mac_os_x')
-  log "Not yet supported"
+  log "!!! UNTESTED !!!"
+  remote_file "/Applications/Firefox.app/Contents/MacOS/mozilla.cfg" do
+    source node['firefox-custom']['cfg_src'] 
+    action :create
+  end
+  remote_file "/Applications/Firefox.app/Contents/MacOS/defaults/pref/local-settings.js" do
+    source node['firefox-custom']['local-settings_src']
+    action :create
 else # assume linux platform
-  log "Not yet supprted"
+  log "Not yet implemented"
 end
