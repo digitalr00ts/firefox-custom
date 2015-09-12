@@ -10,9 +10,9 @@ supports 'windows'
 
 suggests 'dmg'
 suggests 'windows', '~> 1.38.1'
-#depends 'windows'
+# depends 'windows'
 
-depends 'firefox'
+depends 'firefox', '~> 2.0.4'
 
 source_url 'https://github.com/digitalRoots/firefox-custom' if respond_to?(:source_url)
 issues_url 'https://github.com/digitalRoots/firefox-custom/issues' if respond_to?(:issues_url)

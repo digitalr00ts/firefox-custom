@@ -7,24 +7,47 @@
 
 include_recipe 'firefox'
 
-if platform_family?('windows')
-  remote_file "#{ENV['ProgramFiles(x86)']}\\Mozilla Firefox\\mozilla.cfg" do
-    source node['firefox-custom']['cfg_src'] 
-    action :create
+cookbook_file 'local-settings.js' do
+  action :create
+  case node['platform']
+  when 'windows'
+    path "#{ENV['ProgramFiles(x86)']}\\Mozilla Firefox\\defaults\\pref\\local-settings.js"
+  when 'mac_os_x'
+    if node['firefox']['version'] == 'latest' || node['firefox']['version'] >= 34
+      path '/Applications/Firefox.app/Contents/MacOS/defaults/local-settings.js'
+    else
+      path '/Applications/Firefox.app/Contents/MacOS/defaults/pref/local-settings.js'
+    end
+  else # assume Linux or Unix
+    path '/usr/lib/firefox/browser/defaults/preferences/local-settings.js'
   end
-  remote_file "#{ENV['ProgramFiles(x86)']}\\Mozilla Firefox\\defaults\\pref\\local-settings.js" do
-    source node['firefox-custom']['local-settings_src']
+  source 'local-settings.js'
+end
+
+if node['firefox-custom']['cfg-src'].nil? || node['firefox-custom']['cfg-src'].strip.empty? || !defined?(node['firefox-custom']['cfg-src'])
+  cookbook_file 'mozilla.cfg' do
     action :create
+    case node['platform']
+    when 'windows'
+      path "#{ENV['ProgramFiles(x86)']}\\Mozilla Firefox\\mozilla.cfg"
+    when 'mac_os_x'
+      path '/Applications/Firefox.app/Contents/MacOS/mozilla.cfg'
+    else # assume Linux or Unix
+      path '/usr/lib/firefox/mozilla.cfg'
+    end
+    source 'mozilla.cfg'
   end
-elsif platform_family?('mac_os_x')
-  log "!!! UNTESTED !!!"
-  remote_file "/Applications/Firefox.app/Contents/MacOS/mozilla.cfg" do
-    source node['firefox-custom']['cfg_src'] 
+else
+  remote_file 'mozilla.cfg' do
     action :create
+    case node['platform']
+    when 'windows'
+      path "#{ENV['ProgramFiles(x86)']}\\Mozilla Firefox\\mozilla.cfg"
+    when 'mac_os_x'
+      path '/Applications/Firefox.app/Contents/MacOS/mozilla.cfg'
+    else # assume Linux or Unix
+      path '/usr/lib/firefox/mozilla.cfg'
+    end
+    source node['firefox-custom']['cfg-src']
   end
-  remote_file "/Applications/Firefox.app/Contents/MacOS/defaults/pref/local-settings.js" do
-    source node['firefox-custom']['local-settings_src']
-    action :create
-else # assume linux platform
-  log "Not yet implemented"
 end

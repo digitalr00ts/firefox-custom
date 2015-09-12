@@ -10,14 +10,16 @@ Chef cookbook to enabled customization of Firefox installation.
  * Windows 2003
  * Windows 2008
  * Windows 2012
+ * Linux
+ * Mac OS X (unverified)
 
 Will support what ever the Supermarket cookbook [firefox](https://supermarket.chef.io/cookbooks/firefox) supports
-
-TODO: Add Linux (Ubuntu and CentOS)  Support
 
 HELP: Need contributor for Mac OS X
 
 ## Attributes
+
+  * ['firefox-custom']['cfg-src'] - custom url/path to config file
 
 ## Usage
 
@@ -33,7 +35,7 @@ Include `firefox-custom` in your node's `run_list`:
 }
 ```
 ## TO DOs
-* Create attribute to change default mozilla.cfg
+* Change mozilla.cfg from remote_file to template
 * Add override.ini
 * Add userChrome.css/userContent.css
 * Add 
@@ -44,6 +46,14 @@ Include `firefox-custom` in your node's `run_list`:
   * browser/app/profile/firefox.js - defaults specific to Firefox
   * browser/app/profile/firefox-branding.js - defaults specific to the specific kind of Firefox being installed (Nightly, Aurora, Beta, Release)
   * browser/defaults/preferences/firefox-l10n.js - defaults specific to the installed language of Firefox. None of the other preference files contain locale-specific preferences.
+
+## Links 
+- http://kb.mozillazine.org/User.js_file
+- http://kb.mozillazine.org/Prefs.js_file
+- http://kb.mozillazine.org/About:config_entries
+- http://kb.mozillazine.org/Locking_preferences
+- http://kb.mozillazine.org/Security_Policies
+
 ## License and Authors
 
-Author:: digitalR00ts(<dev@droots.org>)
+Author:: digitalR00ts(<developement@digitalr00ts.com>)

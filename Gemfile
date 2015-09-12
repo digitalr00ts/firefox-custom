@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'berkshelf'
-
 # Uncomment these lines if you want to live on the Edge:
 #
 # group :development do
@@ -14,7 +12,22 @@ gem 'berkshelf'
 #   gem "vagrant-omnibus", github: "schisamo/vagrant-omnibus"
 # end
 
-gem "test-kitchen"
-gem "kitchen-vagrant"
+group :lint do
+      gem 'foodcritic', '~> 4.0'
+      gem 'rubocop', '~> 0.33'
+end
 
-gem 'winrm-transport'
+group :unit do
+      gem 'berkshelf',  '~> 3.2'
+      gem 'chefspec',   '~> 4.3'
+end
+
+group :kitchen do
+      gem 'test-kitchen', '~> 1.4'
+      gem 'kitchen-vagrant', '~> 0.18'
+end
+
+#group :os do
+#  gem 'winrm-transport'
+#  gem 'dmg'
+#end
