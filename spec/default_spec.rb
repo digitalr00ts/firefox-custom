@@ -58,5 +58,5 @@ describe 'firefox-custom_test::default' do
 #        version: '28.0+build2-0ubuntu2'
 #      )
 #    end
-#  end
+  end
 end
