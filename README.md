@@ -1,8 +1,5 @@
-# MOVED
-https://github.com/digitalr00ts/firefox-custom
-
 # firefox-custom-cookbook
-[![Build Status](https://secure.travis-ci.org/digitalRoots/firefox-custom.png)](http://travis-ci.org/digitalRoots/firefox-custom)
+[![Build Status](https://secure.travis-ci.org/digitalr00ts/firefox-custom.png)](http://travis-ci.org/digitalr00ts/firefox-custom)
 
 Chef cookbook to enabled customization of Firefox installation.
 
