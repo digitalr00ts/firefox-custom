@@ -4,7 +4,7 @@ maintainer_email 'development@digitalr00ts.org'
 license 'Apache 2.0'
 description 'Customizes Firefox'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '0.1.0'
+version '0.1.1'
 
 %w(redhat centos scientific windows mac_os_x ubuntu).each do |os|
   supports os
