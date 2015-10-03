@@ -1,5 +1,5 @@
 sudo: false
-cache: bundler
+# cache: bundler
 language: ruby
 
 rvm:
@@ -17,6 +17,7 @@ gemfile:
 
 env:
   - CHEF_VERSION=master
+  - CHEF_VERSION=12.4.3
 #  - CHEF_VERSION=12.4.1
 #  - CHEF_VERSION=12.4.0
 #  - CHEF_VERSION=12.3.0
@@ -38,7 +39,6 @@ matrix:
   allow_failures:
     - env: CHEF_VERSION=master, CHEF_VERSION=11.18.6
     - rvm: ruby-head
-  fast_finish: true
 
 script:
   - bundle exec foodcritic -f any .
