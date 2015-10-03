@@ -41,6 +41,8 @@ matrix:
     - rvm: ruby-head
 
 script:
+  - bundle exec foodcritic -V
   - bundle exec foodcritic -f any .
+  - bundle exec rubocop -v
   - bundle exec rubocop
 #  - bundle exec rspec --color

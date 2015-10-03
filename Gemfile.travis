@@ -7,6 +7,6 @@ else
 end
 
 group :lint do
-  gem 'foodcritic'
+  gem 'foodcritic', '~> 4.0'
   gem 'rubocop'
 end
