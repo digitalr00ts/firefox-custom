@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-source 'https://rubygems.org'
-
 if ENV['CHEF_VERSION'] == 'master'
   gem 'chef', github: 'chef/chef'
 else
