@@ -13,8 +13,8 @@ source 'https://rubygems.org'
 # end
 
 group :lint do
-  gem 'foodcritic', '~> 4.0'
-  gem 'rubocop', '~> 0.33'
+  gem 'foodcritic'
+  gem 'rubocop'
 end
 
 group :unit do
