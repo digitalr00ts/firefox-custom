@@ -8,8 +8,8 @@ version          '0.1.0'
 
 supports 'windows'
 
-suggests 'dmg'
-suggests 'windows', '~> 1.38.1'
+suggest 'dmg'
+suggest 'windows', '~> 1.38.1'
 # depends 'windows'
 
 depends 'firefox', '~> 2.0.4'
