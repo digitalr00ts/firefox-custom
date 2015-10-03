@@ -1,9 +1,9 @@
 AllCops:
   Exclude:
-    - 'metadata.rb'
-    - 'spec/default_spec.rb'
-    - 'Berksfile'
-    - 'Vagrantfile'
-    - 'Thorfile'
+    - './metadata.rb'
+    - './spec/default_spec.rb'
+    - './Berksfile'
+    - './Vagrantfile'
+    - './Thorfile'
 LineLength:
   Enabled: false
