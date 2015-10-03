@@ -1,6 +1,6 @@
 name             'firefox-custom'
-maintainer       'digitalRoots'
-maintainer_email 'dev@droots.org'
+maintainer       'digitalr00ts'
+maintainer_email 'development@digitalr00ts.org'
 license          'All rights reserved'
 description      'Installs/Configures firefox-custom'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
