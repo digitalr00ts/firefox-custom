@@ -4,13 +4,8 @@
 Chef cookbook to enabled customization of Firefox installation.
 
 ## Supported Platforms
- * Windows XP
- * Windows Vista
- * Windows 7
- * Windows 2003
- * Windows 2008
- * Windows 2012
- * Linux
+ * Windows - XP, Vista, 7, 2003, 2008, 2012
+ * Linux - Ubuntu, CentOS
  * Mac OS X (unverified)
 
 Will support what ever the Supermarket cookbook [firefox](https://supermarket.chef.io/cookbooks/firefox) supports
@@ -19,7 +14,7 @@ HELP: Need contributor for Mac OS X
 
 ## Attributes
 
-  * ['firefox-custom']['cfg-src'] - custom url/path to config file
+  * ['firefox-custom']['local-settings'] - enables and sets filename for global preference file, default ''mozilla.cfg''
 
 ## Usage
 
@@ -46,6 +41,7 @@ Include `firefox-custom` in your node's `run_list`:
   * browser/app/profile/firefox.js - defaults specific to Firefox
   * browser/app/profile/firefox-branding.js - defaults specific to the specific kind of Firefox being installed (Nightly, Aurora, Beta, Release)
   * browser/defaults/preferences/firefox-l10n.js - defaults specific to the installed language of Firefox. None of the other preference files contain locale-specific preferences.
+* Add support for ESR, may require forking cookbook [firefox](https://supermarket.chef.io/cookbooks/firefox)
 
 ## Links 
 - http://kb.mozillazine.org/User.js_file
