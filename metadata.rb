@@ -1,12 +1,14 @@
 name             'firefox-custom'
 maintainer       'digitalr00ts'
 maintainer_email 'development@digitalr00ts.org'
-license          'All rights reserved'
-description      'Installs/Configures firefox-custom'
+license          'Apache 2.0'
+description      'Customizes Firefox'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '0.1.0'
 
-supports 'windows'
+%w(redhat centos scientific windows mac_os_x ubuntu).each do |os|
+      supports os
+end
 
 suggest 'dmg'
 suggest 'windows', '~> 1.38.2'
