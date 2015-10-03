@@ -1,3 +1,6 @@
+# MOVED
+https://github.com/digitalr00ts/firefox-custom
+
 # firefox-custom-cookbook
 [![Build Status](https://secure.travis-ci.org/digitalRoots/firefox-custom.png)](http://travis-ci.org/digitalRoots/firefox-custom)
 
