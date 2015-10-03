@@ -6,4 +6,7 @@ else
   gem 'chef', ENV['CHEF_VERSION']
 end
 
-gem 'foodcritic'
+group :lint do
+  gem 'foodcritic'
+  gem 'rubocop'
+end
